@@ -1,0 +1,1 @@
+for %f in (original-glyphs\*.png) do pngoptimizercl %f

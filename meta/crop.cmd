@@ -1,0 +1,1 @@
+for %f in (original-icons\*.png) do magick %f -crop 720x720+152+152 cropped-icons\%~nf.png

@@ -1,0 +1,1 @@
+for %f in (original-icons\*.png) do pngoptimizercl %f

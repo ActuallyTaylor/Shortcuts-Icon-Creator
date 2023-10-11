@@ -1,0 +1,1 @@
+for %f in (original-glyphs\*.png) do magick %f +dither -remap palette.txt 4bit-glyphs\%~nf.png
