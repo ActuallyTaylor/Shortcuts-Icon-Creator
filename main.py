@@ -21,7 +21,7 @@ def create_shortcuts_files():
 
 def sign_shortcuts():
     print("=== Signing Shortcuts ===")
-    os.system("./signAllShortcuts.bash")
+    os.system("./signAllShortcuts.sh")
     print("=== Done Signing Shortcuts ===")
 
 def part_1():
@@ -36,33 +36,39 @@ def part_2():
 
 def optimize_icons():
     print("=== Optimizing Icons ===")
-    os.system('./meta/optimizeIcons.cmd')
+    command = os.getcwd() + '/meta/optimizeIcons.sh'
+    os.system(command)
     print("=== Done Optimizing Icons ===")
 
 def crop_icons():
     print("=== Cropping Icons ===")
-    os.system('./meta/crop.cmd')
+    command = os.getcwd() + '/meta/crop.sh'
+    os.system(command)
     print("=== Done Cropping Icons ===")
 
 def remove_background():
     print("=== Removing Backgrounds From Icons ===")
-    os.system('./meta/removeBG.cmd')
+    command = os.getcwd() + '/meta/removeBG.sh'
+    os.system(command)
     print("=== Done Removing Backgrounds From Icons ===")
 
 def palette_reduction():
     print("=== Reducing Icon Palette ===")
-    os.system('./meta/paletteReduction.cmd')
+    command = os.getcwd() + '/meta/paletteReduction.sh'
+    os.system(command)
     print("=== Done Reducing Icon Palette ===")
 
 def optimize_glyphs():
     print("=== Optimizing Icons ===")
-    os.system('./meta/optimizeGlyphs.cmd')
+    command = os.getcwd() + '/meta/optimizeGlyphs.sh'
+    os.system(command)
     print("=== Done Optimizing Icons ===")
 
 def part_3():
     if os.name != 'nt':
         print("Please run this part on a windows machine.")
         exit(1)
+    os.system(f'cd {os.getcwd()}/meta/')
     optimize_icons()
     crop_icons()
     remove_background()
